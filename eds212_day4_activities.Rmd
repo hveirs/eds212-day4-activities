@@ -1,0 +1,50 @@
+---
+title: "R exploration"
+author: "Hailey Veirs"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(skimr)
+library(GGally)
+
+```
+
+
+```{r}
+# Explore diamonds
+
+names(diamonds)
+
+dim(diamonds)
+
+summary(diamonds)
+
+head(diamonds)
+
+tail(diamonds)
+
+skimr::skim(diamonds)
+
+```
+
+Plot it visually
+
+```{r eval=FALSE}
+GGally::ggpairs(diamonds)
+
+```
+
+```{r}
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_point()
+
+ggplot(diamonds, aes(x = carat)) +
+  geom_histogram()
+
+```
+
+

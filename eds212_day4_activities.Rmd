@@ -45,6 +45,9 @@ ggplot(diamonds, aes(x = carat, y = price)) +
 ggplot(diamonds, aes(x = carat)) +
   geom_histogram()
 
+ggplot(diamonds, aes(x = clarity, y = price)) + 
+  geom_jitter()
+
 ```
 
 
